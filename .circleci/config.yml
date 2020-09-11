@@ -1,0 +1,28 @@
+version: 2.1
+
+
+jobs:
+
+#  build:
+#    docker:
+#      - image: circleci/python:3.8.0
+#    steps:
+#      - checkout  # checkout source code to working directory
+#      - run:
+#          command:
+#             pip install -r requirements.txt
+
+  test:
+    docker:
+      - image: circleci/python:3.8.0
+    steps:
+      - checkout  # checkout source code to working directory
+      - run:
+          command:
+             python eight_puzzle.test.py
+
+workflows:
+  main:
+    jobs:
+#      - build
+      - test
