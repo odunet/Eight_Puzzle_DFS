@@ -21,5 +21,6 @@ class SimpleTest(unittest.TestCase):
         print(suggested_node)
         self.assertTrue(np.array_equal(suggested_node,end_array))
 
+#Run the test
 if __name__ == '__main__':
     unittest.main()
