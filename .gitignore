@@ -1,0 +1,11 @@
+#Ignore environment file
+mlenv
+
+#Igbnore python cache
+__pycache__
+
+#Ignore other revisions
+app_Rev1.py
+app_Rev2.py
+app_Rev3.py
+app.py
