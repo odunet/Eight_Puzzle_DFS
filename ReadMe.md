@@ -10,9 +10,18 @@ start_array = np.array([[1,2,3],[4,0,5],[7,8,6]])
 start_array = np.array([[1,2,3],[4,0,8],[7,6,5]])
 ```
 
+### Contributing
+
+To contribute to the project, you need to fork the repo and initiate a pull request to the branch below:
+
+* Pull Reception
+```sh
+git push -u origin PullReception
+```
+
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
+Some of the libraries used in the project to work properly:
 
 * Pandas - Data manipulation library
 * Numpy - Data manipulation library
