@@ -18,8 +18,10 @@ jobs:
     steps:
       - checkout  # checkout source code to working directory
       - run:
+          name: Install dependacy
           command:
-             pip install -r requirements.txt
+            pip install -r requirements.txt
+      - run:
           command:
              python eight_puzzle.test.py
 
