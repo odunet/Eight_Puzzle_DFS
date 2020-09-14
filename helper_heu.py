@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
 import random as rd
-import copy
-import math
+import copy, math, time
+from functools import wraps
+from datetime import datetime
 
 """
 Function hue(a,b);
@@ -63,3 +64,20 @@ def tree_switch(a):
             i[x][y], i[x+1][y] = i[x+1][y], i[x][y]
             copy_stateB.append(i)
     return copy_stateB
+
+"""
+Functon log_time();
+This decorator function takes in nill augument It logs the time taken to
+run the function and the result
+"""
+def log_time(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        """Function that loggs time"""
+        start = time.time()
+        res = f(*args, **kwargs)
+        stop = time.time()
+        with open("func_call_log.txt", "a") as logger:
+            logger.write(f'Date: {datetime.now()}, function ran in {stop-start:.3f}seconds, the reached state is \n{res}\n')
+        return res
+    return wrap

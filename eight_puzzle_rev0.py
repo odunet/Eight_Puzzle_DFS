@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
-import random
+import random, copy
 import helper_heu as hh
-import copy
+from helper_heu import log_time
 
 """
 This scripts solves an 8-Puzzle Game using Depth-First-Algo
@@ -22,6 +22,8 @@ end_array_ = np.array([[1,2,3],[4,5,6],[7,8,0]])
 #Initialize loop lenght
 number_of_iter_ = 100
 
+#call logginh decorator
+@log_time
 #wrap code in function
 def dfs(start_array,end_array,df,number_of_iter):
     #Inititialize variables used in iteration
@@ -66,7 +68,7 @@ def dfs(start_array,end_array,df,number_of_iter):
                     print(df_sn.head())
                     print("**********")
             return df_s
-            #break #Break will be yous if we remove the function wraper
+            #break #Break will be used if we remove the function wraper
         #Get the index of the minimum heuristic value and select corresponding nodes
         #as first chosen state
         index_minimum = heur_list_layer1.index(min(heur_list_layer1))
@@ -118,7 +120,7 @@ def dfs(start_array,end_array,df,number_of_iter):
                     print(df_sn.head())
                     print("**********")
             return df_s
-            #break #Break will be yous if we remove the function wraper
+            #break #Break will be used if we remove the function wraper
         #Get the nodes with minimum heuristic value in the sub-nodes of te first_chosen_state
         #and second_chosen_state
         min_index_branchA = min(heur_list_layer2A)
